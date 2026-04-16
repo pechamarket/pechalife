@@ -606,7 +606,12 @@
                     <label for="phone">연락처</label>
                     <input type="tel" id="phone" placeholder="예: 010-1234-5678" required autocomplete="off">
                 </div>
-                <button type="submit" class="btn-primary w-full">견적 문자 받기</button>
+                <!-- Privacy Consent Checkbox -->
+                <div class="form-privacy">
+                    <input type="checkbox" id="privacy-check" required>
+                    <label for="privacy-check">개인정보 수집 및 이용에 동의합니다. <a href="#" id="privacy-link" class="link-privacy">[내용보기]</a></label>
+                </div>
+                <button type="submit" class="btn-primary w-full">견적 신청하기</button>
             </form>
         </div>
     </div>
@@ -620,6 +625,41 @@
         </svg>
         <span>지금 상담하기</span>
     </button>
+    <!-- Privacy Modal (NEW) -->
+    <div class="modal-overlay" id="privacy-modal">
+        <div class="modal-content glass-panel privacy-modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">개인정보 수집 및 이용 동의</h3>
+                <button class="modal-close" id="privacy-modal-close">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Pecha.Life는 원활한 상담 서비스 제공을 위해 아래와 같이 개인정보를 수집 및 이용합니다.</p>
+                <table class="privacy-table">
+                    <tr>
+                        <th>수집 항목</th>
+                        <td>차량번호, 연락처(휴대폰 번호)</td>
+                    </tr>
+                    <tr>
+                        <th>수집 목적</th>
+                        <td>폐차 상담, 견적 안내 및 서비스 진행</td>
+                    </tr>
+                    <tr>
+                        <th>보유 기간</th>
+                        <td><strong>상담 완료 후 즉시 파기</strong> (단, 관계 법령에 따라 보존이 필요한 경우 해당 기간까지 보관)</td>
+                    </tr>
+                </table>
+                <p class="privacy-note">* 귀하는 개인정보 수집에 동의하지 않을 권리가 있으나, 동의 거부 시 견적 신청이 제한될 수 있습니다.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-primary w-full" id="privacy-modal-ok">확인</button>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

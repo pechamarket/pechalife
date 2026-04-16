@@ -234,6 +234,13 @@ if (quoteForm) {
         // 데이터 수집
         const carNum = document.getElementById('car-num').value;
         const phone = document.getElementById('phone').value;
+        const privacyCheck = document.getElementById('privacy-check');
+
+        // 동의 여부 확인
+        if (privacyCheck && !privacyCheck.checked) {
+            alert('개인정보 수집 및 이용에 동의해주세요.');
+            return;
+        }
 
         // 버튼 상태 변경
         submitBtn.innerHTML = '<span class="spinner"></span> 전송 중...';
@@ -381,6 +388,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initLiveTicker();
     initFAQ();
     initFloatingCTA();
+    initPrivacyModal();
 });
 
 // --- Live Ticker Logic ---
@@ -481,5 +489,35 @@ function initFloatingCTA() {
             cta.style.pointerEvents = 'none';
             cta.style.transform = 'translateY(20px)';
         }
+    });
+}
+// --- Privacy Modal Initialization ---
+function initPrivacyModal() {
+    const privacyModal = document.getElementById('privacy-modal');
+    const openPrivacy = document.getElementById('privacy-link');
+    const closeBtn = document.getElementById('privacy-modal-close');
+    const okBtn = document.getElementById('privacy-modal-ok');
+
+    if (!privacyModal || !openPrivacy) return;
+
+    const closeModal = () => {
+        privacyModal.classList.remove('active');
+        if (!document.getElementById('quote-modal').classList.contains('active')) {
+            document.body.style.overflow = '';
+        }
+    };
+
+    openPrivacy.addEventListener('click', (e) => {
+        e.preventDefault();
+        privacyModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    });
+
+    [closeBtn, okBtn].forEach(btn => {
+        if (btn) btn.addEventListener('click', closeModal);
+    });
+
+    privacyModal.addEventListener('click', (e) => {
+        if (e.target === privacyModal) closeModal();
     });
 }
