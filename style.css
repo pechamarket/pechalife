@@ -1909,3 +1909,110 @@ body {
         padding: 8px 10px;
     }
 }
+/* Privacy Consent & Modal Styles */
+.form-privacy {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin: 24px 0 32px;
+    padding: 0 5px;
+}
+
+.form-privacy input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-top: 1px;
+    cursor: pointer;
+    accent-color: var(--accent);
+}
+
+.form-privacy label {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    cursor: pointer;
+}
+
+.link-privacy {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 6px;
+    border-bottom: 1px dashed var(--accent);
+    transition: var(--transition-fast);
+}
+
+.link-privacy:hover {
+    color: #fff;
+    border-bottom-style: solid;
+}
+
+/* Privacy Modal Refinement */
+.privacy-modal-content {
+    max-width: 580px;
+    padding: 0;
+}
+
+.privacy-modal-content .modal-header {
+    padding: 28px 32px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.privacy-modal-content .modal-title {
+    margin-bottom: 0;
+    font-size: 20px;
+}
+
+.privacy-modal-content .modal-body {
+    padding: 32px;
+}
+
+.privacy-modal-content .modal-body p {
+    font-size: 16px;
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+    line-height: 1.6;
+}
+
+.privacy-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 24px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.privacy-table th, .privacy-table td {
+    padding: 20px;
+    text-align: left;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.privacy-table th {
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--accent);
+    font-weight: 700;
+    width: 110px;
+    vertical-align: top;
+}
+
+.privacy-table td {
+    color: var(--text-primary);
+}
+
+.privacy-note {
+    font-size: 13px !important;
+    color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.privacy-modal-content .modal-footer {
+    padding: 24px 32px;
+    border-top: 1px solid var(--border);
+}
