@@ -220,8 +220,8 @@ if (phoneInput) {
 }
 
 // 텔레그램 연동 설정을 위한 상수 (나중에 직접 채워주세요!)
-const TELEGRAM_BOT_TOKEN = '8643628957:AAFaY17knYFmNe2SBkB2TFMaKkXxvSpF4_E';
-const TELEGRAM_CHAT_ID = '6701316967';
+const TELEGRAM_BOT_TOKEN = '8602319567:AAG8VPaq0Ia0DsRAPe5fyCKXo6yzA40kSm0';
+const TELEGRAM_CHAT_ID = '8781562240';
 
 // Form submission (Telegram Integration)
 const quoteForm = document.getElementById('quote-form');
